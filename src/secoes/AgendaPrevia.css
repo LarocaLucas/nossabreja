@@ -1,0 +1,151 @@
+/* =========================================================================
+   Estilos da Secao Agenda Previa
+   ========================================================================= */
+
+.agenda-previa {
+  padding: var(--espaco-20) 0;
+  background-color: var(--cor-fundo-elevado);
+}
+
+.agenda-previa__container {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 0 var(--espaco-6);
+}
+
+.agenda-previa__cabecalho {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--espaco-10);
+  gap: var(--espaco-4);
+}
+
+.agenda-previa__manuscrito {
+  font-family: var(--fonte-manuscrita);
+  font-size: var(--texto-lg);
+  color: var(--cor-secundaria);
+  margin-bottom: var(--espaco-1);
+}
+
+.agenda-previa__titulo {
+  font-size: var(--texto-2xl);
+  color: var(--cor-texto-principal);
+}
+
+/* Grade semanal: 5 cards em linha */
+.agenda-previa__grade {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--espaco-4);
+}
+
+.agenda-previa__dia {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--borda-raio-lg);
+  padding: var(--espaco-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-4);
+  transition: all var(--transicao-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.agenda-previa__dia::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+  opacity: 0;
+  transition: opacity var(--transicao-normal);
+}
+
+.agenda-previa__dia:hover {
+  border-color: rgba(251, 84, 12, 0.3);
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-md);
+}
+
+.agenda-previa__dia:hover::before {
+  opacity: 1;
+}
+
+.agenda-previa__dia--inativo {
+  opacity: 0.4;
+}
+
+.agenda-previa__dia-nome {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-bold);
+  color: var(--cor-primaria);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.agenda-previa__dia-conteudo {
+  flex: 1;
+}
+
+.agenda-previa__atracao {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-lg);
+  font-weight: var(--peso-bold);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espaco-1);
+}
+
+.agenda-previa__estilo {
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-secundario);
+}
+
+.agenda-previa__icone {
+  color: var(--cor-texto-secundario);
+  opacity: 0.3;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 1024px) {
+  .agenda-previa__grade {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .agenda-previa {
+    padding: var(--espaco-16) 0;
+  }
+
+  .agenda-previa__cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .agenda-previa__titulo {
+    font-size: var(--texto-xl);
+  }
+
+  .agenda-previa__grade {
+    grid-template-columns: 1fr;
+  }
+
+  .agenda-previa__dia {
+    flex-direction: row;
+    align-items: center;
+    padding: var(--espaco-4) var(--espaco-5);
+  }
+
+  .agenda-previa__dia-nome {
+    min-width: 40px;
+  }
+}

@@ -1,0 +1,207 @@
+/* =========================================================================
+   Estilos da Pagina Agenda
+   ========================================================================= */
+
+.pagina-agenda {
+  padding-top: calc(var(--espaco-24) + 60px);
+  padding-bottom: var(--espaco-20);
+  background-color: var(--cor-fundo-base);
+  min-height: 100vh;
+}
+
+.pagina-agenda__container {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 0 var(--espaco-6);
+}
+
+.pagina-agenda__cabecalho {
+  text-align: center;
+  margin-bottom: var(--espaco-12);
+}
+
+.pagina-agenda__manuscrito {
+  font-family: var(--fonte-manuscrita);
+  font-size: var(--texto-lg);
+  color: var(--cor-secundaria);
+  margin-bottom: var(--espaco-2);
+}
+
+.pagina-agenda__titulo {
+  font-size: var(--texto-2xl);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espaco-4);
+}
+
+.pagina-agenda__subtitulo {
+  font-size: var(--texto-base);
+  color: var(--cor-texto-secundario);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grade semanal */
+.pagina-agenda__grade {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--espaco-4);
+  margin-bottom: var(--espaco-16);
+}
+
+.pagina-agenda__dia {
+  background-color: var(--cor-fundo-elevado);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--borda-raio-lg);
+  padding: var(--espaco-6);
+  transition: all var(--transicao-normal);
+}
+
+.pagina-agenda__dia:hover {
+  border-color: rgba(251, 84, 12, 0.3);
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-md);
+}
+
+.pagina-agenda__dia-header {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  margin-bottom: var(--espaco-4);
+}
+
+.pagina-agenda__dia-icone {
+  color: var(--cor-primaria);
+}
+
+.pagina-agenda__dia-nome {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-bold);
+  color: var(--cor-primaria);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pagina-agenda__atracao {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-lg);
+  font-weight: var(--peso-bold);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espaco-2);
+}
+
+.pagina-agenda__estilo {
+  display: inline-block;
+  font-size: var(--texto-xs);
+  color: var(--cor-secundaria);
+  margin-bottom: var(--espaco-3);
+}
+
+.pagina-agenda__descricao {
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-secundario);
+  line-height: var(--linha-relaxada);
+}
+
+/* Eventos especiais */
+.pagina-agenda__eventos {
+  margin-top: var(--espaco-8);
+}
+
+.pagina-agenda__eventos-titulo {
+  font-size: var(--texto-xl);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espaco-8);
+  text-align: center;
+}
+
+.pagina-agenda__evento-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--cor-fundo-elevado);
+  border-radius: var(--borda-raio-xl);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: var(--espaco-6);
+}
+
+.pagina-agenda__evento-imagem-container {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.pagina-agenda__evento-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pagina-agenda__evento-info {
+  padding: var(--espaco-8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--espaco-3);
+}
+
+.pagina-agenda__evento-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  width: fit-content;
+  padding: var(--espaco-1) var(--espaco-3);
+  background-color: var(--cor-secundaria-transparente);
+  color: var(--cor-secundaria);
+  border-radius: var(--borda-raio-total);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semibold);
+  text-transform: uppercase;
+}
+
+.pagina-agenda__evento-nome {
+  font-size: var(--texto-xl);
+  color: var(--cor-texto-principal);
+}
+
+.pagina-agenda__evento-descricao {
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-secundario);
+}
+
+.pagina-agenda__evento-data {
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-principal);
+  font-weight: var(--peso-medio);
+}
+
+.pagina-agenda__evento-preco {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-base);
+  color: var(--cor-secundaria);
+  font-weight: var(--peso-bold);
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 1024px) {
+  .pagina-agenda__grade {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pagina-agenda__evento-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .pagina-agenda__grade {
+    grid-template-columns: 1fr;
+  }
+
+  .pagina-agenda__titulo {
+    font-size: var(--texto-xl);
+  }
+
+  .pagina-agenda__evento-info {
+    padding: var(--espaco-5);
+  }
+}

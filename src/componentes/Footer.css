@@ -1,0 +1,192 @@
+/* =========================================================================
+   Estilos do Footer
+   ========================================================================= */
+
+.footer {
+  background-color: var(--cor-fundo-elevado);
+  margin-top: auto;
+  position: relative;
+}
+
+/* --- Elemento de assinatura: luzes penduradas --- */
+.footer__luzes {
+  position: relative;
+  height: 40px;
+  overflow: hidden;
+}
+
+.footer__luzes-fio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--cor-secundaria) 10%,
+    var(--cor-primaria) 30%,
+    var(--cor-secundaria) 50%,
+    var(--cor-primaria) 70%,
+    var(--cor-secundaria) 90%,
+    transparent 100%
+  );
+  opacity: 0.6;
+}
+
+.footer__luzes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: radial-gradient(
+    ellipse at 15% 0%, var(--cor-secundaria-transparente) 0%, transparent 50%
+  ),
+  radial-gradient(
+    ellipse at 35% 0%, var(--cor-primaria-transparente) 0%, transparent 50%
+  ),
+  radial-gradient(
+    ellipse at 55% 0%, var(--cor-secundaria-transparente) 0%, transparent 50%
+  ),
+  radial-gradient(
+    ellipse at 75% 0%, var(--cor-primaria-transparente) 0%, transparent 50%
+  ),
+  radial-gradient(
+    ellipse at 95% 0%, var(--cor-secundaria-transparente) 0%, transparent 50%
+  );
+}
+
+/* --- Container principal --- */
+.footer__container {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: var(--espaco-12) var(--espaco-6) var(--espaco-8);
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: var(--espaco-10);
+}
+
+/* --- Coluna marca --- */
+.footer__logo {
+  height: 48px;
+  width: auto;
+  margin-bottom: var(--espaco-4);
+}
+
+.footer__tagline {
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-secundario);
+  margin-bottom: var(--espaco-2);
+}
+
+.footer__manuscrita {
+  font-family: var(--fonte-manuscrita);
+  font-size: var(--texto-lg);
+  color: var(--cor-secundaria);
+}
+
+/* --- Colunas --- */
+.footer__titulo-coluna {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-base);
+  font-weight: var(--peso-bold);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espaco-4);
+}
+
+.footer__lista-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-3);
+}
+
+.footer__link {
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-secundario);
+  transition: color var(--transicao-rapida);
+}
+
+.footer__link:hover {
+  color: var(--cor-primaria);
+}
+
+/* --- Info (endereco, horario) --- */
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-3);
+}
+
+.footer__info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espaco-2);
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-secundario);
+}
+
+.footer__icone {
+  color: var(--cor-primaria);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* --- Redes sociais --- */
+.footer__redes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-3);
+}
+
+.footer__rede-link {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-secundario);
+  transition: color var(--transicao-rapida);
+}
+
+.footer__rede-link:hover {
+  color: var(--cor-primaria);
+}
+
+/* --- Rodape inferior --- */
+.footer__rodape {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: var(--espaco-6);
+  text-align: center;
+}
+
+.footer__rodape p {
+  font-size: var(--texto-xs);
+  color: var(--cor-texto-secundario);
+  opacity: 0.6;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 1024px) {
+  .footer__container {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espaco-8);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    gap: var(--espaco-6);
+    padding: var(--espaco-8) var(--espaco-6) var(--espaco-6);
+  }
+
+  .footer__marca {
+    text-align: center;
+  }
+
+  .footer__logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -1,0 +1,145 @@
+/* =========================================================================
+   Estilos da Secao Cardapio Previa
+   ========================================================================= */
+
+.cardapio-previa {
+  padding: var(--espaco-20) 0;
+  background-color: var(--cor-fundo-base);
+}
+
+.cardapio-previa__container {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 0 var(--espaco-6);
+}
+
+.cardapio-previa__cabecalho {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--espaco-10);
+  gap: var(--espaco-4);
+}
+
+.cardapio-previa__manuscrito {
+  font-family: var(--fonte-manuscrita);
+  font-size: var(--texto-lg);
+  color: var(--cor-secundaria);
+  margin-bottom: var(--espaco-1);
+}
+
+.cardapio-previa__titulo {
+  font-size: var(--texto-2xl);
+  color: var(--cor-texto-principal);
+}
+
+.cardapio-previa__acoes {
+  display: flex;
+  gap: var(--espaco-3);
+}
+
+/* Grade de cards do cardapio */
+.cardapio-previa__grade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaco-6);
+}
+
+.cardapio-previa__card {
+  background-color: var(--cor-fundo-elevado);
+  border-radius: var(--borda-raio-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all var(--transicao-normal);
+}
+
+.cardapio-previa__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-lg);
+  border-color: rgba(251, 84, 12, 0.2);
+}
+
+.cardapio-previa__card-imagem-container {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.cardapio-previa__card-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transicao-suave);
+}
+
+.cardapio-previa__card:hover .cardapio-previa__card-imagem {
+  transform: scale(1.05);
+}
+
+.cardapio-previa__card-categoria {
+  position: absolute;
+  top: var(--espaco-3);
+  left: var(--espaco-3);
+  padding: var(--espaco-1) var(--espaco-3);
+  background-color: var(--cor-fundo-overlay-forte);
+  color: var(--cor-primaria);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--borda-raio-total);
+}
+
+.cardapio-previa__card-conteudo {
+  padding: var(--espaco-5);
+}
+
+.cardapio-previa__card-nome {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-lg);
+  font-weight: var(--peso-bold);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espaco-2);
+}
+
+.cardapio-previa__card-descricao {
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-secundario);
+  line-height: var(--linha-relaxada);
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 1024px) {
+  .cardapio-previa__grade {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cardapio-previa {
+    padding: var(--espaco-16) 0;
+  }
+
+  .cardapio-previa__cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cardapio-previa__titulo {
+    font-size: var(--texto-xl);
+  }
+
+  .cardapio-previa__grade {
+    grid-template-columns: 1fr;
+  }
+
+  .cardapio-previa__acoes {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cardapio-previa__acoes .botao {
+    width: 100%;
+    text-align: center;
+  }
+}

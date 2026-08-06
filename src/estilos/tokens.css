@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Design Tokens - Nossa Breja Gastrobar
+   Paleta extraida do logotipo e identidade visual do Instagram @nossabreja__
+   ========================================================================== */
+
+:root {
+  /* --- Cores da Marca --- */
+  --cor-primaria: #FB540C;
+  --cor-secundaria: #F8B927;
+  --cor-contraste: #53362A;
+  --cor-destaque-claro: #E4D1CD;
+  --cor-fundo-base: #14100D;
+  --cor-fundo-elevado: #1F1712;
+  --cor-texto-principal: #F5F1EA;
+  --cor-texto-secundario: #A69C93;
+
+  /* Variacoes com opacidade para overlays e efeitos */
+  --cor-primaria-transparente: rgba(251, 84, 12, 0.15);
+  --cor-secundaria-transparente: rgba(248, 185, 39, 0.15);
+  --cor-fundo-overlay: rgba(20, 16, 13, 0.75);
+  --cor-fundo-overlay-forte: rgba(20, 16, 13, 0.9);
+
+  /* --- Tipografia --- */
+  --fonte-display: 'Baloo 2', cursive;
+  --fonte-manuscrita: 'Caveat', cursive;
+  --fonte-corpo: 'Inter', sans-serif;
+
+  /* Escala tipografica (rem baseado em 16px) */
+  --texto-xs: 0.75rem;    /* 12px */
+  --texto-sm: 0.875rem;   /* 14px */
+  --texto-base: 1rem;     /* 16px */
+  --texto-lg: 1.25rem;    /* 20px */
+  --texto-xl: 1.75rem;    /* 28px */
+  --texto-2xl: 2.5rem;    /* 40px */
+  --texto-3xl: 4rem;      /* 64px */
+
+  /* Pesos tipograficos */
+  --peso-regular: 400;
+  --peso-medio: 500;
+  --peso-semibold: 600;
+  --peso-bold: 700;
+  --peso-extrabold: 800;
+
+  /* Alturas de linha */
+  --linha-apertada: 1.1;
+  --linha-normal: 1.5;
+  --linha-relaxada: 1.75;
+
+  /* --- Espacamento --- */
+  --espaco-1: 0.25rem;   /* 4px */
+  --espaco-2: 0.5rem;    /* 8px */
+  --espaco-3: 0.75rem;   /* 12px */
+  --espaco-4: 1rem;      /* 16px */
+  --espaco-5: 1.25rem;   /* 20px */
+  --espaco-6: 1.5rem;    /* 24px */
+  --espaco-8: 2rem;      /* 32px */
+  --espaco-10: 2.5rem;   /* 40px */
+  --espaco-12: 3rem;     /* 48px */
+  --espaco-16: 4rem;     /* 64px */
+  --espaco-20: 5rem;     /* 80px */
+  --espaco-24: 6rem;     /* 96px */
+
+  /* --- Layout --- */
+  --largura-maxima: 1200px;
+  --largura-conteudo: 960px;
+
+  /* Breakpoints (referencia, usados via media queries) */
+  /* Mobile: 375px | Tablet: 768px | Desktop: 1024px | Wide: 1440px */
+
+  /* --- Bordas --- */
+  --borda-raio-sm: 0.375rem;  /* 6px */
+  --borda-raio-md: 0.75rem;   /* 12px */
+  --borda-raio-lg: 1rem;      /* 16px */
+  --borda-raio-xl: 1.5rem;    /* 24px */
+  --borda-raio-total: 9999px;
+
+  /* --- Sombras --- */
+  --sombra-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --sombra-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --sombra-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --sombra-brilho-primaria: 0 0 20px rgba(251, 84, 12, 0.3);
+  --sombra-brilho-secundaria: 0 0 20px rgba(248, 185, 39, 0.3);
+
+  /* --- Transicoes --- */
+  --transicao-rapida: 150ms ease;
+  --transicao-normal: 300ms ease;
+  --transicao-suave: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* --- Z-index --- */
+  --z-base: 1;
+  --z-elevado: 10;
+  --z-header: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+}

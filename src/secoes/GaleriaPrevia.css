@@ -1,0 +1,117 @@
+/* =========================================================================
+   Estilos da Secao Galeria Previa
+   ========================================================================= */
+
+.galeria-previa {
+  padding: var(--espaco-20) 0;
+  background-color: var(--cor-fundo-elevado);
+}
+
+.galeria-previa__container {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 0 var(--espaco-6);
+}
+
+.galeria-previa__cabecalho {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--espaco-10);
+  gap: var(--espaco-4);
+}
+
+.galeria-previa__manuscrito {
+  font-family: var(--fonte-manuscrita);
+  font-size: var(--texto-lg);
+  color: var(--cor-secundaria);
+  margin-bottom: var(--espaco-1);
+}
+
+.galeria-previa__titulo {
+  font-size: var(--texto-2xl);
+  color: var(--cor-texto-principal);
+}
+
+.galeria-previa__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaco-4);
+}
+
+.galeria-previa__item {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--borda-raio-lg);
+  overflow: hidden;
+}
+
+.galeria-previa__imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transicao-suave);
+}
+
+.galeria-previa__item:hover .galeria-previa__imagem {
+  transform: scale(1.08);
+}
+
+.galeria-previa__item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20, 16, 13, 0.85) 0%,
+    transparent 50%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: var(--espaco-5);
+  color: var(--cor-texto-principal);
+  opacity: 0;
+  transition: opacity var(--transicao-normal);
+}
+
+.galeria-previa__item:hover .galeria-previa__item-overlay {
+  opacity: 1;
+}
+
+.galeria-previa__item-nome {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-base);
+  font-weight: var(--peso-bold);
+  margin-top: var(--espaco-2);
+}
+
+.galeria-previa__item-data {
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-secundario);
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 768px) {
+  .galeria-previa {
+    padding: var(--espaco-16) 0;
+  }
+
+  .galeria-previa__cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .galeria-previa__titulo {
+    font-size: var(--texto-xl);
+  }
+
+  .galeria-previa__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Overlay sempre visivel no mobile (sem hover) */
+  .galeria-previa__item-overlay {
+    opacity: 1;
+  }
+}

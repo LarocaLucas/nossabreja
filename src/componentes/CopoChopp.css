@@ -1,0 +1,15 @@
+/* =========================================================================
+   Estilos do Copo de Chopp (Assinatura)
+   ========================================================================= */
+
+.assinatura-copo {
+  display: inline-block;
+  opacity: 0.15;
+  pointer-events: none;
+  user-select: none;
+}
+
+.assinatura-copo__svg {
+  width: 100%;
+  height: 100%;
+}

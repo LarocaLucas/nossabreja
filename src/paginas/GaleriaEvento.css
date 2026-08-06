@@ -1,0 +1,129 @@
+/* =========================================================================
+   Estilos da Pagina GaleriaEvento
+   ========================================================================= */
+
+.pagina-galeria-evento {
+  padding-top: calc(var(--espaco-24) + 60px);
+  padding-bottom: var(--espaco-20);
+  background-color: var(--cor-fundo-base);
+  min-height: 100vh;
+}
+
+.pagina-galeria-evento__container {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 0 var(--espaco-6);
+}
+
+.pagina-galeria-evento__voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-secundario);
+  margin-bottom: var(--espaco-8);
+  transition: color var(--transicao-rapida);
+}
+
+.pagina-galeria-evento__voltar:hover {
+  color: var(--cor-primaria);
+}
+
+.pagina-galeria-evento__cabecalho {
+  margin-bottom: var(--espaco-10);
+}
+
+.pagina-galeria-evento__titulo {
+  font-size: var(--texto-2xl);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espaco-2);
+}
+
+.pagina-galeria-evento__data {
+  font-size: var(--texto-sm);
+  color: var(--cor-secundaria);
+  margin-bottom: var(--espaco-3);
+}
+
+.pagina-galeria-evento__descricao {
+  font-size: var(--texto-base);
+  color: var(--cor-texto-secundario);
+}
+
+/* Grid de fotos */
+.pagina-galeria-evento__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaco-4);
+}
+
+.pagina-galeria-evento__foto {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--borda-raio-md);
+  overflow: hidden;
+}
+
+.pagina-galeria-evento__foto-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transicao-suave);
+}
+
+.pagina-galeria-evento__foto:hover .pagina-galeria-evento__foto-imagem {
+  transform: scale(1.05);
+}
+
+.pagina-galeria-evento__foto-download {
+  position: absolute;
+  bottom: var(--espaco-3);
+  right: var(--espaco-3);
+  width: 36px;
+  height: 36px;
+  background-color: var(--cor-fundo-overlay-forte);
+  border-radius: var(--borda-raio-total);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-texto-principal);
+  opacity: 0;
+  transition: opacity var(--transicao-normal);
+}
+
+.pagina-galeria-evento__foto:hover .pagina-galeria-evento__foto-download {
+  opacity: 1;
+}
+
+/* Estado vazio */
+.pagina-galeria-evento__vazio {
+  text-align: center;
+  padding: var(--espaco-20) 0;
+}
+
+.pagina-galeria-evento__vazio h1 {
+  font-size: var(--texto-xl);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espaco-4);
+}
+
+.pagina-galeria-evento__vazio p {
+  color: var(--cor-texto-secundario);
+  margin-bottom: var(--espaco-6);
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 768px) {
+  .pagina-galeria-evento__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--espaco-2);
+  }
+
+  .pagina-galeria-evento__titulo {
+    font-size: var(--texto-xl);
+  }
+
+  .pagina-galeria-evento__foto-download {
+    opacity: 1;
+  }
+}

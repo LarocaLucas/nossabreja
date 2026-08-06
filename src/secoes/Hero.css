@@ -1,0 +1,169 @@
+/* =========================================================================
+   Estilos da Secao Hero
+   ========================================================================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Imagem de fundo */
+.hero__fundo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 16, 13, 0.5) 0%,
+    rgba(20, 16, 13, 0.7) 50%,
+    rgba(20, 16, 13, 0.95) 100%
+  );
+}
+
+/* Efeito de luz quente pulsante */
+.hero__luz-ambiente {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(251, 84, 12, 0.08) 0%,
+    rgba(248, 185, 39, 0.04) 40%,
+    transparent 70%
+  );
+  animation: pulsoLuz 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes pulsoLuz {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+/* Conteudo */
+.hero__conteudo {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--espaco-6);
+  max-width: 800px;
+}
+
+.hero__manuscrita {
+  font-family: var(--fonte-manuscrita);
+  font-size: var(--texto-xl);
+  color: var(--cor-secundaria);
+  margin-bottom: var(--espaco-4);
+}
+
+.hero__titulo {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-3xl);
+  font-weight: var(--peso-extrabold);
+  color: var(--cor-texto-principal);
+  line-height: var(--linha-apertada);
+  margin-bottom: var(--espaco-6);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero__horario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-3);
+  margin-bottom: var(--espaco-10);
+  flex-wrap: wrap;
+}
+
+.hero__horario-tag {
+  display: inline-block;
+  padding: var(--espaco-2) var(--espaco-4);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--borda-raio-total);
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-principal);
+  font-weight: var(--peso-medio);
+}
+
+.hero__horario-separador {
+  color: var(--cor-texto-secundario);
+  font-size: var(--texto-sm);
+}
+
+.hero__acoes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-4);
+  flex-wrap: wrap;
+}
+
+/* Scroll indicator animado */
+.hero__scroll {
+  position: absolute;
+  bottom: var(--espaco-8);
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--cor-texto-secundario);
+  animation: scrollBounce 2s ease-in-out infinite;
+  z-index: 2;
+  opacity: 0.5;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 768px) {
+  .hero__titulo {
+    font-size: var(--texto-2xl);
+  }
+
+  .hero__manuscrita {
+    font-size: var(--texto-lg);
+  }
+
+  .hero__luz-ambiente {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero__acoes {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero__acoes .botao {
+    width: 100%;
+  }
+}

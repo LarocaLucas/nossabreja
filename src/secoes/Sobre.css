@@ -1,0 +1,129 @@
+/* =========================================================================
+   Estilos da Secao Sobre
+   ========================================================================= */
+
+.sobre {
+  padding: var(--espaco-24) 0;
+  background-color: var(--cor-fundo-base);
+}
+
+.sobre__container {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 0 var(--espaco-6);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaco-16);
+  align-items: center;
+}
+
+.sobre__subtitulo-manuscrito {
+  font-family: var(--fonte-manuscrita);
+  font-size: var(--texto-lg);
+  color: var(--cor-secundaria);
+  margin-bottom: var(--espaco-2);
+}
+
+.sobre__titulo {
+  font-size: var(--texto-2xl);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espaco-6);
+}
+
+.sobre__descricao {
+  font-size: var(--texto-base);
+  color: var(--cor-texto-secundario);
+  line-height: var(--linha-relaxada);
+  margin-bottom: var(--espaco-4);
+}
+
+/* Destaques com icones */
+.sobre__destaques {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-5);
+  margin-top: var(--espaco-8);
+}
+
+.sobre__destaque {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-4);
+}
+
+.sobre__destaque-icone {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--borda-raio-md);
+  background-color: var(--cor-primaria-transparente);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-primaria);
+  flex-shrink: 0;
+}
+
+.sobre__destaque-titulo {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-base);
+  font-weight: var(--peso-semibold);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espaco-1);
+}
+
+.sobre__destaque-texto {
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-secundario);
+}
+
+/* Imagem com moldura decorativa */
+.sobre__imagem-container {
+  position: relative;
+}
+
+.sobre__imagem {
+  width: 100%;
+  border-radius: var(--borda-raio-lg);
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+
+.sobre__imagem-moldura {
+  position: absolute;
+  top: var(--espaco-4);
+  right: calc(var(--espaco-4) * -1);
+  bottom: calc(var(--espaco-4) * -1);
+  left: var(--espaco-4);
+  border: 2px solid var(--cor-primaria);
+  border-radius: var(--borda-raio-lg);
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 1024px) {
+  .sobre__container {
+    grid-template-columns: 1fr;
+    gap: var(--espaco-10);
+  }
+
+  .sobre__imagem-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .sobre {
+    padding: var(--espaco-16) 0;
+  }
+
+  .sobre__titulo {
+    font-size: var(--texto-xl);
+  }
+}
+
+/* Elemento decorativo Copo */
+.sobre { position: relative; overflow: hidden; }
+.sobre__decoracao-copo { position: absolute; right: -50px; bottom: -50px; width: 400px; height: 400px; opacity: 0.05; transform: rotate(-15deg); }
+@media (max-width: 768px) { .sobre__decoracao-copo { width: 200px; height: 200px; right: -20px; bottom: -20px; } }

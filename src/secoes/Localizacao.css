@@ -1,0 +1,109 @@
+/* =========================================================================
+   Estilos da Secao Localizacao
+   ========================================================================= */
+
+.localizacao {
+  padding: var(--espaco-20) 0;
+  background-color: var(--cor-fundo-base);
+}
+
+.localizacao__container {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 0 var(--espaco-6);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaco-10);
+  align-items: center;
+}
+
+.localizacao__manuscrito {
+  font-family: var(--fonte-manuscrita);
+  font-size: var(--texto-lg);
+  color: var(--cor-secundaria);
+  margin-bottom: var(--espaco-1);
+}
+
+.localizacao__titulo {
+  font-size: var(--texto-2xl);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espaco-8);
+}
+
+.localizacao__detalhes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-6);
+  margin-bottom: var(--espaco-8);
+}
+
+.localizacao__detalhe {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espaco-4);
+}
+
+.localizacao__detalhe-icone {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--borda-raio-md);
+  background-color: var(--cor-primaria-transparente);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-primaria);
+  flex-shrink: 0;
+}
+
+.localizacao__detalhe-titulo {
+  font-family: var(--fonte-display);
+  font-size: var(--texto-base);
+  font-weight: var(--peso-semibold);
+  color: var(--cor-texto-principal);
+  margin-bottom: var(--espaco-1);
+}
+
+.localizacao__detalhe-texto {
+  font-size: var(--texto-sm);
+  color: var(--cor-texto-secundario);
+}
+
+.localizacao__cta {
+  width: fit-content;
+}
+
+/* Mapa */
+.localizacao__mapa-container {
+  aspect-ratio: 4/3;
+  border-radius: var(--borda-raio-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.localizacao__mapa {
+  width: 100%;
+  height: 100%;
+  filter: invert(0.9) hue-rotate(180deg) brightness(0.8) contrast(1.2);
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 1024px) {
+  .localizacao__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .localizacao {
+    padding: var(--espaco-16) 0;
+  }
+
+  .localizacao__titulo {
+    font-size: var(--texto-xl);
+  }
+
+  .localizacao__cta {
+    width: 100%;
+    text-align: center;
+  }
+}

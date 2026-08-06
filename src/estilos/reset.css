@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Reset CSS - Nossa Breja Gastrobar
+   Reset moderno com respeito a prefers-reduced-motion
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Desativa scroll suave quando usuario prefere movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--fonte-corpo);
+  font-weight: var(--peso-regular);
+  line-height: var(--linha-normal);
+  color: var(--cor-texto-principal);
+  background-color: var(--cor-fundo-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fonte-display);
+  font-weight: var(--peso-bold);
+  line-height: var(--linha-apertada);
+  overflow-wrap: break-word;
+}
+
+p {
+  overflow-wrap: break-word;
+}
+
+/* Foco visivel para acessibilidade (teclado) */
+:focus-visible {
+  outline: 2px solid var(--cor-secundaria);
+  outline-offset: 2px;
+}
+
+/* Remove outline padrao de clique (mouse) */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Root do React */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
