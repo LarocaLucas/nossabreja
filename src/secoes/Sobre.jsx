@@ -3,7 +3,7 @@
    ========================================================================= */
 
 import { Beer, Music, Utensils } from 'lucide-react';
-import heroFundo from '../assets/imagens/hero-fundo.png';
+import sobreFundo from '../assets/imagens/122.jpg';
 import CopoChopp from '../componentes/CopoChopp';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import './Sobre.css';
@@ -65,7 +65,7 @@ export default function Sobre() {
 
         <div className="sobre__imagem-container revelar-item">
           <img
-            src={heroFundo}
+            src={sobreFundo}
             alt="Interior acolhedor do Nossa Breja Gastrobar com iluminacao quente"
             className="sobre__imagem"
             loading="lazy"

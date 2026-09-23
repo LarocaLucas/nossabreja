@@ -5,7 +5,7 @@
 
 import { ChevronDown } from 'lucide-react';
 import { dadosSite } from '../config/site';
-import heroFundo from '../assets/imagens/hero-fundo.png';
+import heroFundo from '../assets/imagens/148.jpg';
 import './Hero.css';
 
 export default function Hero() {
