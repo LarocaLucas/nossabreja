@@ -1,40 +1,32 @@
 /* =========================================================================
    Galeria de eventos - Nossa Breja Gastrobar
-   Cada album tem slug unico, nome, data e lista de fotos.
-   Preparada para receber fotos reais organizadas por evento.
+   Integrado com Cloudflare R2
    ========================================================================= */
 
-import imgEvento01 from '../assets/imagens/galeria-evento-01.png';
+// TODO: Cole aqui o endereco publico do seu bucket R2!
+// Exemplo: 'https://pub-abcdef123456.r2.dev'
+export const BASE_URL_R2 = 'https://pub-9fbfcd55584544da98451ebf6ef85d8d.r2.dev';
+
+// Funcao para gerar a lista de fotos de 01.jpg a 168.jpg
+const gerarFotos = (quantidade) => {
+  return Array.from({ length: quantidade }, (_, i) => {
+    // PadStart garante que 1 vire 01, 2 vire 02, etc. (se no bucket estiverem como 01.jpg, 02.jpg...)
+    // Caso no bucket esteja 1.jpg, 2.jpg, remova o padStart(2, '0')
+    const numeroStr = String(i + 1).padStart(2, '0');
+    return {
+      src: `${BASE_URL_R2}/${numeroStr}.jpg`,
+      alt: `Foto ${numeroStr} do evento`,
+    };
+  });
+};
 
 export const albumsGaleria = [
   {
-    slug: 'sextaneja-agosto-2026',
-    nome: 'Sextaneja',
-    data: '2026-08-01',
-    descricao: 'Uma noite de sertanejo que ninguem esqueceu.',
-    capa: imgEvento01,
-    fotos: [
-      { src: imgEvento01, alt: 'Publico curtindo a Sextaneja no Nossa Breja' },
-    ],
-  },
-  {
-    slug: 'pagodinho-no-deck-julho-2026',
-    nome: 'Pagodinho no Deck',
-    data: '2026-07-24',
-    descricao: 'Pagode de qualidade no deck do Nossa Breja.',
-    capa: imgEvento01,
-    fotos: [
-      { src: imgEvento01, alt: 'Pagodinho no Deck do Nossa Breja' },
-    ],
-  },
-  {
-    slug: 'esquenta-rodeio-julho-2026',
-    nome: 'Esquenta Rodeio',
-    data: '2026-07-19',
-    descricao: 'A galera se reuniu pro esquenta mais animado da cidade.',
-    capa: imgEvento01,
-    fotos: [
-      { src: imgEvento01, alt: 'Esquenta Rodeio no Nossa Breja' },
-    ],
+    slug: 'boteco-do-nossa-breja',
+    nome: 'Boteco do Nossa Breja',
+    data: '2026-08-08',
+    descricao: 'Confira os registros oficiais do Boteco do Nossa Breja!',
+    capa: `${BASE_URL_R2}/01.jpg`, // Usa a foto 1 como capa
+    fotos: gerarFotos(168),
   },
 ];
