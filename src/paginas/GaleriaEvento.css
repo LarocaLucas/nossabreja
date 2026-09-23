@@ -127,3 +127,8 @@
     opacity: 1;
   }
 }
+
+.pagina-galeria-evento__foto { cursor: pointer; }
+.pagina-galeria-evento__foto-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+.pagina-galeria-evento__foto:hover .pagina-galeria-evento__foto-overlay { opacity: 1; }
+.pagina-galeria-evento__icone-ampliar { color: white; }

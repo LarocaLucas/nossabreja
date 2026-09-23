@@ -2,13 +2,17 @@
    Pagina GaleriaEvento - Album individual de fotos
    ========================================================================= */
 
+import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Download } from 'lucide-react';
+import { ArrowLeft, Download, Maximize2 } from 'lucide-react';
 import { albumsGaleria } from '../config/galeria';
+import Lightbox from '../componentes/Lightbox';
 import './GaleriaEvento.css';
 
 export default function GaleriaEvento() {
   const { slug } = useParams();
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+  
   const album = albumsGaleria.find((a) => a.slug === slug);
 
   if (!album) {
@@ -52,18 +56,27 @@ export default function GaleriaEvento() {
 
         <div className="pagina-galeria-evento__grid">
           {album.fotos.map((foto, index) => (
-            <div key={index} className="pagina-galeria-evento__foto">
+            <div 
+              key={index} 
+              className="pagina-galeria-evento__foto"
+              onClick={() => setLightboxIndex(index)}
+              title="Ampliar foto"
+            >
               <img
                 src={foto.src}
                 alt={foto.alt}
                 className="pagina-galeria-evento__foto-imagem"
                 loading="lazy"
               />
+              <div className="pagina-galeria-evento__foto-overlay">
+                <Maximize2 size={24} className="pagina-galeria-evento__icone-ampliar" />
+              </div>
               <a
                 href={foto.src}
                 download
                 className="pagina-galeria-evento__foto-download"
                 aria-label={`Baixar foto: ${foto.alt}`}
+                onClick={(e) => e.stopPropagation()}
               >
                 <Download size={16} />
               </a>
@@ -71,6 +84,14 @@ export default function GaleriaEvento() {
           ))}
         </div>
       </div>
+
+      {lightboxIndex !== null && (
+        <Lightbox
+          fotos={album.fotos}
+          initialIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+        />
+      )}
     </main>
   );
 }

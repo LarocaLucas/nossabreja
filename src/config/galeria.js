@@ -5,7 +5,7 @@
 
 // TODO: Cole aqui o endereco publico do seu bucket R2!
 // Exemplo: 'https://pub-abcdef123456.r2.dev'
-export const BASE_URL_R2 = 'https://pub-9fbfcd55584544da98451ebf6ef85d8d.r2.dev';
+export const BASE_URL_R2 = 'https://pub-9fbfcd55584544da98451ebf6ef85d8d.r2.dev/SIMBORASIM';
 
 // Funcao para gerar a lista de fotos de 01.jpg a 168.jpg
 const gerarFotos = (quantidade) => {
@@ -22,10 +22,10 @@ const gerarFotos = (quantidade) => {
 
 export const albumsGaleria = [
   {
-    slug: 'boteco-do-nossa-breja',
-    nome: 'Boteco do Nossa Breja',
+    slug: 'simborasim',
+    nome: 'Simborasim',
     data: '2026-08-08',
-    descricao: 'Confira os registros oficiais do Boteco do Nossa Breja!',
+    descricao: 'Confira os registros oficiais do Simborasim!',
     capa: `${BASE_URL_R2}/01.jpg`, // Usa a foto 1 como capa
     fotos: gerarFotos(168),
   },
