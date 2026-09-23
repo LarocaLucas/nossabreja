@@ -16,7 +16,7 @@ export const dadosSite = {
     /* Coordenadas para o Google Maps embed */
     latitude: -24.5286,
     longitude: -49.9461,
-    googleMapsUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.5!2d-49.9461!3d-24.5286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRua+Dantas+Ribeiro%2C+454+-+Pira%C3%AD+do+Sul%2C+PR!5e0!3m2!1spt-BR!2sbr',
+    googleMapsUrl: 'https://maps.google.com/maps?q=Nossa+Breja,+Rua+Dantas+Ribeiro,+454+-+Pirai+do+Sul,+PR&t=&z=16&ie=UTF8&iwloc=&output=embed',
   },
 
   horario: {

@@ -63,7 +63,10 @@ export default function Lightbox({ fotos, initialIndex, onClose }) {
 
   // Clica fora da imagem
   const handleOverlayClick = (e) => {
-    if (e.target.classList.contains('lightbox__overlay')) {
+    if (
+      e.target.classList.contains('lightbox__overlay') ||
+      e.target.classList.contains('lightbox__conteudo')
+    ) {
       onClose();
     }
   };
