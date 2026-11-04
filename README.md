@@ -1,16 +1,42 @@
-# React + Vite
+# Nossa Breja — site
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Site da Nossa Breja, em desenvolvimento.
 
-Currently, two official plugins are available:
+- **Status:** em desenvolvimento
+- **Cliente:** Nossa Breja (dono do site); desenvolvimento pela laroca.dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+React 19, Vite, React Router, GSAP e Lucide; lint com Oxlint.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Estrutura
 
-## Expanding the Oxlint configuration
+```
+src/componentes/   componentes reutilizáveis
+src/secoes/        seções da página inicial
+src/paginas/       páginas
+src/config/        dados e configurações
+src/estilos/       estilos globais
+public/            arquivos estáticos
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Rodar localmente
+
+```bash
+npm install
+npm run dev      # servidor de desenvolvimento
+npm run build    # build de produção em dist/
+npm run lint
+```
+
+## Publicar
+
+Cloudflare Pages, a cada push na `main`.
+
+## Licença
+
+Proprietário — todos os direitos reservados.
+
+## Contato
+
+Desenvolvido pela [laroca.dev](https://laroca.dev) · contato@laroca.dev
